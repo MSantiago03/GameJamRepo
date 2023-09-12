@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2058702645060660094}
   - component: {fileID: 1335717543046803450}
+  - component: {fileID: -3722293495263433590}
   m_Layer: 0
   m_Name: Blue3
   m_TagString: Untagged
@@ -70,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1273272865
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1033377338, guid: c8cca12bb58884889a14f9a204912d23, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-3722293495263433590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4340297874043460720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb3ea85eca914c19a54686a80282671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
