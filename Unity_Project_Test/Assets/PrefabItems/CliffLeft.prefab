@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7602371482574227109}
   - component: {fileID: 9034623154624241131}
+  - component: {fileID: 8643740857830232305}
   m_Layer: 0
   m_Name: CliffLeft
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 8521890184740764903}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.864773, y: 1.9645756, z: 0}
+  m_LocalPosition: {x: -7.84148, y: 3.1602964, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -84,3 +85,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &8643740857830232305
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8521890184740764903}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 9.900001, w: 0}
+    pivot: {x: 0.16666667, y: 0.5}
+    oldSize: {x: 14.4, y: 16}
+    newSize: {x: 14.4, y: 16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.8000001, y: -3.6000001}
+      - {x: 2.3, y: -0.6}
+      - {x: 2.1495707, y: -0.40028578}
+      - {x: 1.198856, y: 1.100286}
+      - {x: 1.8489983, y: 4.1}
+      - {x: 1.8881431, y: 5.119892}
+      - {x: 1.498856, y: 6.0507154}
+      - {x: 2.099428, y: 6.6}
+      - {x: 2.1495717, y: 8}
+      - {x: -2.4, y: 8}
+      - {x: -2.4, y: -8}
+      - {x: 1.599428, y: -7.9498568}
+      - {x: 2.0994284, y: -6.4498577}
+      - {x: 2.099428, y: -5.4}
+      - {x: 1.499429, y: -4.801143}
+  m_UseDelaunayMesh: 0
