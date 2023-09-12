@@ -8,7 +8,8 @@ public class Climber : MonoBehaviour
     public float moveForce = 10.0f;
     private Rigidbody2D rb;
     private Arrow arrow;
-    public AudioSource myAudio;
+    //private AudioSource myAudio;
+    //public AudioClip jumpAudio;
 
     private SpriteRenderer mySpriteRenderer;
     public Sprite clingSprite;
@@ -16,12 +17,13 @@ public class Climber : MonoBehaviour
     private float previousVelocityX;
     private int curLevel = 1;
 
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         arrow = GetComponentInChildren<Arrow>();
-        myAudio = GetComponent<AudioSource>(); 
+        //myAudio = GetComponent<AudioSource>(); 
         mySpriteRenderer = GetComponent<SpriteRenderer>();
 
     }
@@ -37,7 +39,7 @@ public class Climber : MonoBehaviour
             arrow.PauseRotation();
             // Calculate the launch direction based on the arrow's rotation
             Vector2 launchDirection = arrow.GetLaunchDirection();
-
+            //myAudio.PlayOneShot(jumpAudio);
             // Apply a force in the calculated direction
             rb.AddForce(launchDirection * moveForce, ForceMode2D.Impulse);
         }
@@ -81,7 +83,7 @@ public class Climber : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            myAudio.Play();
+            
             // Apply a force in the desired direction
             rb.AddForce(Vector2.up * moveForce, ForceMode2D.Impulse);
         }
@@ -103,9 +105,14 @@ public class Climber : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+        if (col.gameObject.GetComponent<Button>() != null)
+        {
+            curLevel += 1;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            
+        }
 
-        
+
     }
-
 
 }
