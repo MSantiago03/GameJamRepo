@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Climber : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Climber : MonoBehaviour
     public Sprite clingSprite;
     public Sprite jumpSprite;
     private float previousVelocityX;
+    private int curLevel = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,7 @@ public class Climber : MonoBehaviour
         arrow = GetComponentInChildren<Arrow>();
         myAudio = GetComponent<AudioSource>(); 
         mySpriteRenderer = GetComponent<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
@@ -73,12 +76,30 @@ public class Climber : MonoBehaviour
         arrow.ResumeRotation();
         Debug.Log("should start rotating");
         // Check for space bar input
+
+        Rock hitRock = col.gameObject.GetComponent<Rock>();
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             myAudio.Play();
             // Apply a force in the desired direction
             rb.AddForce(Vector2.up * moveForce, ForceMode2D.Impulse);
         }
+
+        if (hitRock != null)
+        {
+            if (hitRock.level == curLevel)
+            {
+                // Do something when the levels match
+                Debug.Log("Collided with a Rock at the same level!");
+            }
+        }
+
+        if (col.gameObject.GetComponent<cliffScript>() != null)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
         
     }
 
