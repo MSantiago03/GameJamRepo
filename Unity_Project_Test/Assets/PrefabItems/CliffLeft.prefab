@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9034623154624241131}
   - component: {fileID: 8643740857830232305}
   - component: {fileID: -489839804201177086}
+  - component: {fileID: 2505711446247963276}
   m_Layer: 0
   m_Name: CliffLeft
   m_TagString: Untagged
@@ -191,3 +192,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.0085704, y: 16}
   m_EdgeRadius: 0
+--- !u!114 &2505711446247963276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8521890184740764903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3690ba0b99024977a435d6698ae2803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -65,7 +65,7 @@ public class Climber : MonoBehaviour
             }
     
         }
-        Debug.Log("Previous Velocity: " + previousVelocityX);
+        
 
     }
 
@@ -92,6 +92,10 @@ public class Climber : MonoBehaviour
             {
                 // Do something when the levels match
                 Debug.Log("Collided with a Rock at the same level!");
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
 
