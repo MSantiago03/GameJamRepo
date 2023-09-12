@@ -48,6 +48,7 @@ public class Arrow : MonoBehaviour
     public void ResumeRotation()
     {
         isRotating = true;
+        Debug.Log("should start rotating");
     }
 }
 

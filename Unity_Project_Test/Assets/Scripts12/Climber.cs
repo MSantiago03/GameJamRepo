@@ -20,6 +20,7 @@ public class Climber : MonoBehaviour
         // Check for space bar input
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            Debug.Log("space pressed");
             arrow.PauseRotation();
             // Calculate the launch direction based on the arrow's rotation
             Vector2 launchDirection = arrow.GetLaunchDirection();
@@ -28,6 +29,14 @@ public class Climber : MonoBehaviour
             rb.AddForce(launchDirection * moveForce, ForceMode2D.Impulse);
         }
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        // Check if the collision is with an object
+        arrow.ResumeRotation();
+        Debug.Log("should start rotating");
+        
     }
 
 }
