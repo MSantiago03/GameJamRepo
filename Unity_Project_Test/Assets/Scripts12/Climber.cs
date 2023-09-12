@@ -29,6 +29,7 @@ public class Climber : MonoBehaviour
         // Check for space bar input
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            
             Debug.Log("space pressed");
             arrow.PauseRotation();
             // Calculate the launch direction based on the arrow's rotation
@@ -42,37 +43,44 @@ public class Climber : MonoBehaviour
         {
             mySpriteRenderer.sprite = jumpSprite;
             mySpriteRenderer.flipX = false;
+            previousVelocityX = 1f;
 
         }
         else if (rb.velocity.x < 0)
         {
             mySpriteRenderer.sprite = jumpSprite;
             mySpriteRenderer.flipX = true;
+            previousVelocityX = -1f;
+
         }
         else
         {
             mySpriteRenderer.sprite = clingSprite;
-            mySpriteRenderer.flipX = (previousVelocityX < 0); // Flip if previously moving left
+            if (previousVelocityX < 0)
+            {
+                mySpriteRenderer.flipX = true;
+            }
+    
         }
-        previousVelocityX = rb.velocity.x;
+        Debug.Log("Previous Velocity: " + previousVelocityX);
 
     }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
         // Check if the collision is with an object
+        rb.velocity = Vector2.zero;
         arrow.ResumeRotation();
         Debug.Log("should start rotating");
-            // Check for space bar input
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
+        // Check for space bar input
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
             myAudio.Play();
-                // Apply a force in the desired direction
-                rb.AddForce(Vector2.up * moveForce, ForceMode2D.Impulse);
-            }
-
-
+            // Apply a force in the desired direction
+            rb.AddForce(Vector2.up * moveForce, ForceMode2D.Impulse);
+        }
         
     }
+
 
 }
